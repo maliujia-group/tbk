@@ -104,8 +104,8 @@ func (t *Tbk) ParseBody(body io.Reader, response interface{}) ([]byte, error) {
 		return nil, err
 	}
 	errRes := ErrorResponse{}
-	if err := json.Unmarshal(data, &errRes); err != nil && errRes.ErrorResponse.Code != 0 {
-		return nil, errors.New(string(data))
+	if err := json.Unmarshal(data, &errRes); err == nil && errRes.ErrorResponse.Code != 0 {
+		return nil, errors.New(fmt.Sprintf("%s 错误码：%s", errRes.ErrorResponse.SubMsg, errRes.ErrorResponse.SubCode))
 	}
 	if err := json.Unmarshal(data, &response); err != nil {
 		return nil, err
