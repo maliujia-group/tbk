@@ -178,7 +178,7 @@ type MaterialOptionalData struct {
 	JddNum                 int    `json:"jdd_num"`
 	JddPrice               string `json:"jdd_price"`
 	UvSumPreSale           int    `json:"uv_sum_pre_sale"`
-	CouponAmount           string `json:"coupon_amount"`
+	CouponAmount           int    `json:"coupon_amount"`
 	CouponStartFee         string `json:"coupon_start_fee"`
 	ItemDescription        string `json:"item_description"`
 	Nick                   string `json:"nick"`
