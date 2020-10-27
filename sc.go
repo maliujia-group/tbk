@@ -178,7 +178,7 @@ type MaterialOptionalData struct {
 	JddNum                 int    `json:"jdd_num"`
 	JddPrice               string `json:"jdd_price"`
 	UvSumPreSale           int    `json:"uv_sum_pre_sale"`
-	CouponAmount           int    `json:"coupon_amount"`
+	CouponAmount           string `json:"coupon_amount"`
 	CouponStartFee         string `json:"coupon_start_fee"`
 	ItemDescription        string `json:"item_description"`
 	Nick                   string `json:"nick"`
@@ -205,6 +205,15 @@ type MaterialOptionalData struct {
 	YsylTljFace            string `json:"ysyl_tlj_face"`
 	YsylTljUseEndTime      string `json:"ysyl_tlj_use_end_time"`
 	YsylTljUseStartTime    string `json:"ysyl_tlj_use_start_time"`
+	SaleBeginTime          string `json:"sale_begin_time"`
+	SaleEndTime            string `json:"sale_end_time"`
+	Distance               string `json:"distance"`
+	UsableShopId           string `json:"usable_shop_id"`
+	UsableShopName         string `json:"usable_shop_name"`
+	SalePrice              string `json:"sale_price"`
+	KuadianPromotionInfo   string `json:"kuadian_promotion_info"`
+	SuperiorBrand          string `json:"superior_brand"`
+	RewardInfo             string `json:"reward_info"`
 }
 
 /**
