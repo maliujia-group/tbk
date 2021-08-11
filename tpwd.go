@@ -58,3 +58,29 @@ func (t *tpwd) Query(passwordContent string) (res *TpwQueryResponse, err error) 
 	}, &res)
 	return
 }
+
+type TpwdConvertResponse struct {
+	Response struct {
+		Data struct {
+			NumIid    string `json:"num_iid"`
+			ClickUrl  string `json:"click_url"`
+			SellerId  string `json:"seller_id"`
+			OriginUrl string `json:"origin_url"`
+			OriginPid string `json:"origin_pid"`
+		} `json:"data"`
+	} `json:"tbk_tpwd_convert_response"`
+}
+
+/**
+ * (淘宝客-推广者-淘口令解析&转链 )
+ * taobao.tbk.tpwd.convert
+ * @line https://aff-open.taobao.com/#!/document
+ */
+func (t *tpwd) Convert(passwordContent string, adzoneId string, dx string) (res *TpwdConvertResponse, err error) {
+	_, err = t.Client.httpPost("taobao.tbk.tpwd.convert", map[string]string{
+		"password_content": passwordContent,
+		"adzone_id":        adzoneId,
+		"dx":               dx,
+	}, &res)
+	return
+}
