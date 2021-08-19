@@ -167,6 +167,53 @@ func (v *vegas) TljInstanceReport(RightsId string) (res *TljReportResponse, err 
 	return
 }
 
+type LbTljConf struct {
+	SecurityLevel        int    `json:"security_level"`           //安全等级
+	UseStartTime         string `json:"use_start_time"`           // 使用开始日期
+	UseEndTime           string `json:"use_end_time"`             // 使用结束日期
+	UseEndTimeMode       int    `json:"use_end_time_mode"`        // 结束日期的模式 1:相对时间 2:绝对时间
+	AcceptStartTime      string `json:"accept_start_time"`        // 裂变任务领取开始时间
+	AcceptEndTime        string `json:"accept_end_time"`          // 裂变任务领取截止时间
+	RightsPerFace        string `json:"rights_per_face"`          // 单个淘礼金面额，支持两位小数，单位元
+	SecuritySwitch       bool   `json:"security_switch"`          // 安全开关 true启用 false不启用
+	UserTotalWinNumLimit int    `json:"user_total_win_num_limit"` // 单用户累计中奖次数上限
+	Name                 string `json:"name"`                     // 淘礼金名称
+	RightsNum            int    `json:"rights_num"`               // 淘礼金总个数
+	ItemId               string `json:"item_id"`                  // 商品ID
+	CampaignType         string `json:"campaign_type"`
+	TaskRightNum         int    `json:"task_right_num"`       // 裂变淘礼金总个数
+	TaskRightsPerFace    string `json:"task_rights_per_face"` // 裂变单个淘礼金面额
+	InviteNum            int    `json:"invite_num"`           // 裂变淘礼金邀请人数
+	InviteTimeLimit      int    `json:"invite_time_limit"`    // 裂变淘礼金邀请时长，单位分钟，最大120分钟
+	AdzoneId             int    `json:"adzone_id"`            // 推广位ID
+}
+
+type LbTljResponse struct {
+	Response struct {
+		Result struct {
+			Model struct {
+				RightsID     string `json:"rights_id"`      // 直接领取淘礼金ID 即小额淘礼金
+				SendURL      string `json:"send_url"`       // 发放地址
+				TaskRightsID string `json:"task_rights_id"` // 裂变淘礼金ID 即大额淘礼金
+				TaskID       string `json:"task_id"`        // 裂变任务ID
+			} `json:"model"`
+			MsgCode string `json:"msg_code"`
+			MsgInfo string `json:"msg_info"`
+			Success bool   `json:"success"`
+		} `json:"result"`
+	} `json:"tbk_dg_vegas_lbtlj_create_response"`
+}
+
+/**
+ * ( 淘宝客-推广者-裂变淘礼金创建 )
+ * taobao.tbk.dg.vegas.lbtlj.create
+ * @line https://open.taobao.com/api.htm?docId=57710&docType=2&scopeId=23995
+ */
+func (v *vegas) LbTljCreate(conf *LbTljConf) (res *LbTljResponse, err error) {
+	_, err = v.Client.httpPost("taobao.tbk.dg.vegas.lbtlj.create", v.Client.Struct2MapString(conf), &res)
+	return
+}
+
 type newUser struct {
 	Client *Tbk
 }
