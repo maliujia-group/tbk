@@ -214,6 +214,7 @@ type MaterialOptionalData struct {
 	KuadianPromotionInfo   string `json:"kuadian_promotion_info"`
 	SuperiorBrand          string `json:"superior_brand"`
 	RewardInfo             string `json:"reward_info"`
+	CpaRewardType          string `json:"cpa_reward_type"`
 }
 
 /**
@@ -327,6 +328,7 @@ type OptimusMaterialData struct {
 	PromotionCondition         string `json:"promotion_condition"`
 	JuPreShowEndTime           string `json:"ju_pre_show_end_time"`
 	JuPreShowStartTime         string `json:"ju_pre_show_start_time"`
+	CpaRewardType              string `json:"cpa_reward_type"`
 }
 
 /**
