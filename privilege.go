@@ -12,7 +12,7 @@ type PrivilegeResponse struct {
 				CouponEndTime       string `json:"coupon_end_time"`
 				CouponInfo          string `json:"coupon_info"`
 				CouponStartTime     string `json:"coupon_start_time"`
-				ItemId              int64  `json:"item_id"`
+				ItemId              string `json:"item_id"`
 				MaxCommissionRate   string `json:"max_commission_rate"`
 				CouponTotalCount    int64  `json:"coupon_total_count"`
 				CouponRemainCount   int64  `json:"coupon_remain_count"`

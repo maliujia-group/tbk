@@ -44,7 +44,7 @@ type TbkRebateOrderGetResponse struct {
 			NTbkOrder []struct {
 				TradeParentID   int    `json:"trade_parent_id"`
 				TradeID         int    `json:"trade_id"`
-				NumIid          int    `json:"num_iid"`
+				NumIid          string `json:"num_iid"`
 				ItemTitle       string `json:"item_title"`
 				ItemNum         int    `json:"item_num"`
 				Price           string `json:"price"`

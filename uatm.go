@@ -11,7 +11,7 @@ func (t *Tbk) Uatm() *uatm {
 }
 
 type UatmTbkItem struct {
-	NumIid      int    `json:"num_iid"`
+	NumIid      string `json:"num_iid"`
 	Title       string `json:"title"`
 	PictURL     string `json:"pict_url"`
 	SmallImages struct {

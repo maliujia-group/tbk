@@ -92,7 +92,7 @@ func (d *dg) Vegas() *vegas {
 // 淘礼金创建配置
 type TljConf struct {
 	AdzoneId             int64  `json:"adzone_id"`                // 广告位id
-	ItemId               int64  `json:"item_id"`                  // 商品id
+	ItemId               string `json:"item_id"`                  // 商品id
 	TotalNum             int64  `json:"total_num"`                // 总体个数
 	Name                 string `json:"name"`                     // 淘礼金名称
 	UserTotalWinNumLimit int    `json:"user_total_win_num_limit"` // 单用户累计中奖次数上限
@@ -168,7 +168,7 @@ func (v *vegas) TljInstanceReport(RightsId string) (res *TljReportResponse, err 
 }
 
 type LbTljConf struct {
-	SecurityLevel        int    `json:"security_level"`           //安全等级
+	SecurityLevel        int    `json:"security_level"`           // 安全等级
 	UseStartTime         string `json:"use_start_time"`           // 使用开始日期
 	UseEndTime           string `json:"use_end_time"`             // 使用结束日期
 	UseEndTimeMode       int    `json:"use_end_time_mode"`        // 结束日期的模式 1:相对时间 2:绝对时间

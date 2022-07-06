@@ -143,7 +143,7 @@ type MaterialOptionalData struct {
 	TkTotalSales    string `json:"tk_total_sales"`
 	TkTotalCommi    string `json:"tk_total_commi"`
 	CouponID        string `json:"coupon_id"`
-	NumIid          int64  `json:"num_iid"`
+	NumIid          string `json:"num_iid"`
 	Title           string `json:"title"`
 	PictURL         string `json:"pict_url"`
 	SmallImages     struct {
@@ -158,7 +158,7 @@ type MaterialOptionalData struct {
 	IncludeDxjh            string `json:"include_dxjh"`
 	CommissionRate         string `json:"commission_rate"`
 	Volume                 int    `json:"volume"`
-	SellerID               int    `json:"seller_id"`
+	SellerID               string `json:"seller_id"`
 	CouponTotalCount       int    `json:"coupon_total_count"`
 	CouponRemainCount      int    `json:"coupon_remain_count"`
 	CouponInfo             string `json:"coupon_info"`
@@ -250,7 +250,7 @@ type OptimusMaterialData struct {
 	ShopTitle            string `json:"shop_title"`
 	CategoryID           int    `json:"category_id"`
 	CouponStartFee       string `json:"coupon_start_fee"`
-	ItemID               int64  `json:"item_id"`
+	ItemID               string `json:"item_id"`
 	CouponTotalCount     int    `json:"coupon_total_count"`
 	UserType             int    `json:"user_type"`
 	ZkFinalPrice         string `json:"zk_final_price"`

@@ -60,7 +60,7 @@ type PublisherOrderDto struct {
 	ClickTime                          string `json:"click_time"`
 	TkStatus                           int    `json:"tk_status"`
 	ItemPrice                          string `json:"item_price"`
-	ItemID                             int64  `json:"item_id"`
+	ItemID                             string `json:"item_id"`
 	AdzoneName                         string `json:"adzone_name"`
 	TotalCommissionRate                string `json:"total_commission_rate"`
 	ItemLink                           string `json:"item_link"`

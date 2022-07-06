@@ -27,7 +27,7 @@ type TbkJuTqgGetResponse struct {
 				StartTime    string `json:"start_time"`
 				ReservePrice string `json:"reserve_price"`
 				PicURL       string `json:"pic_url"`
-				NumIid       int    `json:"num_iid"`
+				NumIid       string `json:"num_iid"`
 			} `json:"results"`
 		} `json:"results"`
 		TotalResults int `json:"total_results"`
