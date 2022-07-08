@@ -123,7 +123,7 @@ type TbkItemRecommendGetResponse struct {
 				Provcity     string      `json:"provcity"`
 				ItemUrl      string      `json:"item_url"`
 				Nick         string      `json:"nick"`
-				SellerId     int         `json:"seller_id"`
+				SellerId     string      `json:"seller_id"`
 				Volume       int         `json:"volume"`
 			} `json:"n_tbk_item"`
 		} `json:"results"`
