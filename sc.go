@@ -188,7 +188,7 @@ type MaterialOptionalData struct {
 	SellNum                int    `json:"sell_num"`
 	Stock                  int    `json:"stock"`
 	TmallPlayActivityInfo  string `json:"tmall_play_activity_info"`
-	ItemID                 int64  `json:"item_id"`
+	ItemID                 string `json:"item_id"`
 	RealPostFee            string `json:"real_post_fee"`
 	LockRateStartTime      int64  `json:"lock_rate_start_time"`
 	LockRateEndTime        int64  `json:"lock_rate_end_time"`
