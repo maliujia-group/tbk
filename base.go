@@ -170,7 +170,7 @@ func (t *Tbk) generateSign(arr map[string]string, secretKey string) string {
 	return strings.ToUpper(fmt.Sprintf("%x", md5.Sum([]byte(stringToBeSigned))))
 }
 
-// 将结构体转换成 map[string]string
+// Struct2MapString 将结构体转换成 map[string]string
 func (t *Tbk) Struct2MapString(obj interface{}) map[string]string {
 	tp := reflect.TypeOf(obj)
 	v := reflect.ValueOf(obj)
@@ -183,4 +183,26 @@ func (t *Tbk) Struct2MapString(obj interface{}) map[string]string {
 		data[key] = v.Field(i).String()
 	}
 	return data
+}
+
+// MixedItemID 兼容数字和字符串商品ID (实现json.Unmarshal方法)
+type MixedItemID struct {
+	string
+}
+
+func (m *MixedItemID) UnmarshalJSON(b []byte) error {
+	m.string = strings.Trim(string(b), "\"")
+	return nil
+}
+
+func (m *MixedItemID) MarshalJSON() ([]byte, error) {
+	return []byte(fmt.Sprintf("\"%s\"", m.string)), nil
+}
+
+func (m *MixedItemID) IsSet() bool {
+	return m.string == ""
+}
+
+func (m *MixedItemID) String() string {
+	return m.string
 }

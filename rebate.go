@@ -42,20 +42,20 @@ type TbkRebateOrderGetResponse struct {
 	Response struct {
 		Results struct {
 			NTbkOrder []struct {
-				TradeParentID   int    `json:"trade_parent_id"`
-				TradeID         int    `json:"trade_id"`
-				NumIid          string `json:"num_iid"`
-				ItemTitle       string `json:"item_title"`
-				ItemNum         int    `json:"item_num"`
-				Price           string `json:"price"`
-				PayPrice        string `json:"pay_price"`
-				SellerNick      string `json:"seller_nick"`
-				SellerShopTitle string `json:"seller_shop_title"`
-				Commission      string `json:"commission"`
-				CommissionRate  string `json:"commission_rate"`
-				Unid            string `json:"unid"`
-				CreateTime      string `json:"create_time"`
-				EarningTime     string `json:"earning_time"`
+				TradeParentID   int         `json:"trade_parent_id"`
+				TradeID         int         `json:"trade_id"`
+				NumIid          MixedItemID `json:"num_iid"`
+				ItemTitle       string      `json:"item_title"`
+				ItemNum         int         `json:"item_num"`
+				Price           string      `json:"price"`
+				PayPrice        string      `json:"pay_price"`
+				SellerNick      string      `json:"seller_nick"`
+				SellerShopTitle string      `json:"seller_shop_title"`
+				Commission      string      `json:"commission"`
+				CommissionRate  string      `json:"commission_rate"`
+				Unid            string      `json:"unid"`
+				CreateTime      string      `json:"create_time"`
+				EarningTime     string      `json:"earning_time"`
 			} `json:"n_tbk_order"`
 		} `json:"results"`
 	} `json:"tbk_rebate_order_get_response"`

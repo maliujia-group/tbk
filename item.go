@@ -28,7 +28,7 @@ type TbkItemInfoGetResponse struct {
 // 淘宝客商品
 type NTbkItem struct {
 	CatName                    string      `json:"cat_name"`
-	NumIid                     string      `json:"num_iid"`
+	NumIid                     MixedItemID `json:"num_iid"`
 	Title                      string      `json:"title"`
 	PictURL                    string      `json:"pict_url"`
 	SmallImages                SmallImages `json:"small_images"`
@@ -37,7 +37,7 @@ type NTbkItem struct {
 	UserType                   int         `json:"user_type"`
 	Provcity                   string      `json:"provcity"`
 	ItemURL                    string      `json:"item_url"`
-	SellerID                   string      `json:"seller_id"`
+	SellerID                   int         `json:"seller_id"`
 	Volume                     int         `json:"volume"`
 	Nick                       string      `json:"nick"`
 	CatLeafName                string      `json:"cat_leaf_name"`
@@ -113,7 +113,7 @@ type TbkItemRecommendGetResponse struct {
 	Response struct {
 		Results struct {
 			NTbkItem []struct {
-				NumIid       string      `json:"num_iid"`
+				NumIid       MixedItemID `json:"num_iid"`
 				Title        string      `json:"title"`
 				PictUrl      string      `json:"pict_url"`
 				SmallImages  SmallImages `json:"small_images"`
@@ -155,7 +155,7 @@ type TbkItemGuessLikeResponse struct {
 }
 
 type TbkItemCoupon struct {
-	NumIid            string      `json:"num_iid"`
+	NumIid            MixedItemID `json:"num_iid"`
 	Title             string      `json:"title"`
 	PictURL           string      `json:"pict_url"`
 	SmallImages       SmallImages `json:"small_images"`
