@@ -17,17 +17,17 @@ type TbkJuTqgGetResponse struct {
 	Response struct {
 		Results struct {
 			Results []struct {
-				Title        string `json:"title"`
-				TotalAmount  int    `json:"total_amount"`
-				ClickURL     string `json:"click_url"`
-				CategoryName string `json:"category_name"`
-				ZkFinalPrice string `json:"zk_final_price"`
-				EndTime      string `json:"end_time"`
-				SoldNum      int    `json:"sold_num"`
-				StartTime    string `json:"start_time"`
-				ReservePrice string `json:"reserve_price"`
-				PicURL       string `json:"pic_url"`
-				NumIid       int    `json:"num_iid"`
+				Title        string      `json:"title"`
+				TotalAmount  int         `json:"total_amount"`
+				ClickURL     string      `json:"click_url"`
+				CategoryName string      `json:"category_name"`
+				ZkFinalPrice string      `json:"zk_final_price"`
+				EndTime      string      `json:"end_time"`
+				SoldNum      int         `json:"sold_num"`
+				StartTime    string      `json:"start_time"`
+				ReservePrice string      `json:"reserve_price"`
+				PicURL       string      `json:"pic_url"`
+				NumIid       MixedItemID `json:"num_iid"`
 			} `json:"results"`
 		} `json:"results"`
 		TotalResults int `json:"total_results"`

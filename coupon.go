@@ -45,23 +45,23 @@ type TbkCouponConvertResponse struct {
 		Result struct {
 			TotalResults int `json:"total_results"`
 			Results      struct {
-				CategoryID          int    `json:"category_id"`
-				CouponClickURL      string `json:"coupon_click_url"`
-				CouponEndTime       string `json:"coupon_end_time"`
-				CouponInfo          string `json:"coupon_info"`
-				CouponStartTime     string `json:"coupon_start_time"`
-				ItemID              int64  `json:"item_id"`
-				MaxCommissionRate   string `json:"max_commission_rate"`
-				CouponTotalCount    int    `json:"coupon_total_count"`
-				CouponRemainCount   int    `json:"coupon_remain_count"`
-				CampaignType        int    `json:"campaign_type"`
-				ItemURL             string `json:"item_url"`
-				YsylClickURL        string `json:"ysyl_click_url"`
-				YsylTljFace         string `json:"ysyl_tlj_face"`
-				YsylTljSendTime     string `json:"ysyl_tlj_send_time"`
-				YsylCommissionRate  string `json:"ysyl_commission_rate"`
-				YsylTljUseStartTime string `json:"ysyl_tlj_use_start_time"`
-				YsylTljUseEndTime   string `json:"ysyl_tlj_use_end_time"`
+				CategoryID          int         `json:"category_id"`
+				CouponClickURL      string      `json:"coupon_click_url"`
+				CouponEndTime       string      `json:"coupon_end_time"`
+				CouponInfo          string      `json:"coupon_info"`
+				CouponStartTime     string      `json:"coupon_start_time"`
+				ItemID              MixedItemID `json:"item_id"`
+				MaxCommissionRate   string      `json:"max_commission_rate"`
+				CouponTotalCount    int         `json:"coupon_total_count"`
+				CouponRemainCount   int         `json:"coupon_remain_count"`
+				CampaignType        int         `json:"campaign_type"`
+				ItemURL             string      `json:"item_url"`
+				YsylClickURL        string      `json:"ysyl_click_url"`
+				YsylTljFace         string      `json:"ysyl_tlj_face"`
+				YsylTljSendTime     string      `json:"ysyl_tlj_send_time"`
+				YsylCommissionRate  string      `json:"ysyl_commission_rate"`
+				YsylTljUseStartTime string      `json:"ysyl_tlj_use_start_time"`
+				YsylTljUseEndTime   string      `json:"ysyl_tlj_use_end_time"`
 			} `json:"results"`
 		} `json:"result"`
 	} `json:"tbk_coupon_convert_response"`

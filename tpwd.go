@@ -13,7 +13,7 @@ func (t *Tbk) Tpwd() *tpwd {
 type TpwdCreateResponse struct {
 	Response struct {
 		Data struct {
-			Model string `json:"model"`
+			Model          string `json:"model"`
 			PasswordSimple string `json:"password_simple"`
 		} `json:"data"`
 	} `json:"tbk_tpwd_create_response"`
@@ -63,11 +63,11 @@ func (t *tpwd) Query(passwordContent string) (res *TpwQueryResponse, err error) 
 type TpwdConvertResponse struct {
 	Response struct {
 		Data struct {
-			NumIid    string `json:"num_iid"`
-			ClickUrl  string `json:"click_url"`
-			SellerId  string `json:"seller_id"`
-			OriginUrl string `json:"origin_url"`
-			OriginPid string `json:"origin_pid"`
+			NumIid    MixedItemID `json:"num_iid"`
+			ClickUrl  string      `json:"click_url"`
+			SellerId  string      `json:"seller_id"`
+			OriginUrl string      `json:"origin_url"`
+			OriginPid string      `json:"origin_pid"`
 		} `json:"data"`
 	} `json:"tbk_tpwd_convert_response"`
 }

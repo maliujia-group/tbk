@@ -28,7 +28,7 @@ type TbkItemInfoGetResponse struct {
 // 淘宝客商品
 type NTbkItem struct {
 	CatName                    string      `json:"cat_name"`
-	NumIid                     int         `json:"num_iid"`
+	NumIid                     MixedItemID `json:"num_iid"`
 	Title                      string      `json:"title"`
 	PictURL                    string      `json:"pict_url"`
 	SmallImages                SmallImages `json:"small_images"`
@@ -85,7 +85,7 @@ type TbkItemConvertResponse struct {
 	Response struct {
 		Results struct {
 			NTbkItem []struct {
-				NumIid   int    `json:"num_iid"`
+				NumIid   string `json:"num_iid"`
 				ClickUrl string `json:"click_url"`
 			} `json:"n_tbk_item"`
 		} `json:"results"`
@@ -113,7 +113,7 @@ type TbkItemRecommendGetResponse struct {
 	Response struct {
 		Results struct {
 			NTbkItem []struct {
-				NumIid       int         `json:"num_iid"`
+				NumIid       MixedItemID `json:"num_iid"`
 				Title        string      `json:"title"`
 				PictUrl      string      `json:"pict_url"`
 				SmallImages  SmallImages `json:"small_images"`
@@ -123,7 +123,7 @@ type TbkItemRecommendGetResponse struct {
 				Provcity     string      `json:"provcity"`
 				ItemUrl      string      `json:"item_url"`
 				Nick         string      `json:"nick"`
-				SellerId     int         `json:"seller_id"`
+				SellerId     string      `json:"seller_id"`
 				Volume       int         `json:"volume"`
 			} `json:"n_tbk_item"`
 		} `json:"results"`
@@ -135,13 +135,13 @@ type TbkItemRecommendGetResponse struct {
  * taobao.tbk.item.recommend.get
  * @line https://open.taobao.com/api.htm?docId=24517&docType=2
  */
-func (it *item) RecommendGet(fields string, numIid int64, other ...map[string]string) (res *TbkItemRecommendGetResponse, err error) {
+func (it *item) RecommendGet(fields string, numIid string, other ...map[string]string) (res *TbkItemRecommendGetResponse, err error) {
 	params := make(map[string]string)
 	if len(other) > 0 {
 		params = other[0]
 	}
 	params["fields"] = fields
-	params["num_iid"] = strconv.FormatInt(numIid, 10)
+	params["num_iid"] = numIid
 	_, err = it.Client.httpPost("taobao.tbk.item.info.get", params, &res)
 	return
 }
@@ -155,7 +155,7 @@ type TbkItemGuessLikeResponse struct {
 }
 
 type TbkItemCoupon struct {
-	NumIid            int         `json:"num_iid"`
+	NumIid            MixedItemID `json:"num_iid"`
 	Title             string      `json:"title"`
 	PictURL           string      `json:"pict_url"`
 	SmallImages       SmallImages `json:"small_images"`
