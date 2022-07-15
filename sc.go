@@ -158,7 +158,7 @@ type MaterialOptionalData struct {
 	IncludeDxjh            string      `json:"include_dxjh"`
 	CommissionRate         string      `json:"commission_rate"`
 	Volume                 int         `json:"volume"`
-	SellerID               string      `json:"seller_id"`
+	SellerID               int         `json:"seller_id"`
 	CouponTotalCount       int         `json:"coupon_total_count"`
 	CouponRemainCount      int         `json:"coupon_remain_count"`
 	CouponInfo             string      `json:"coupon_info"`
