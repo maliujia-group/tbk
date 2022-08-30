@@ -212,3 +212,23 @@ func (it *item) ClickExtract(url string) (res *TbkItemClickExtractResponse, err 
 	_, err = it.Client.httpPost("taobao.tbk.item.click.extract", map[string]string{"click_url": url}, &res)
 	return
 }
+
+type TbkItemIdTransformResponse struct {
+	Results struct {
+		ItemIDTransformDTO []struct {
+			ItemID         string `json:"item_id"`
+			OriginalItemID string `json:"original_item_id"`
+		} `json:"item_id_transform_d_t_o"`
+	} `json:"results"`
+	RequestID string `json:"request_id"`
+}
+
+/**
+ * ( 淘宝客-推广者-商品id升级（临时接口）)
+ * taobao.tbk.itemid.temporary.transform
+ * @link https://open.taobao.com/api.htm?docId=63635&docType=2&scopeId=27337
+ */
+func (it *item) Transform(ids string) (res *TbkItemIdTransformResponse, err error) {
+	_, err = it.Client.httpPost("taobao.tbk.itemid.temporary.transform", map[string]string{"item_ids": ids}, &res)
+	return
+}
