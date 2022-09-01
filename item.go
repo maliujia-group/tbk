@@ -221,15 +221,15 @@ type TbkItemIdTransformResponse struct {
 				ItemID         string `json:"item_id"`
 			} `json:"item_id_transform_d_t_o"`
 		} `json:"results"`
-	} `json:"tbk_itemid_temporary_transform_response"`
+	} `json:"tbk_itemid_transform_response"`
 }
 
 /**
  * ( 淘宝客-推广者-商品id升级（临时接口）)
  * taobao.tbk.itemid.temporary.transform
- * @link https://open.taobao.com/api.htm?docId=63635&docType=2&scopeId=27337
+ * @link https://open.taobao.com/api.htm?docId=64169&docType=2&scopeId=12486
  */
 func (it *item) Transform(ids string) (res *TbkItemIdTransformResponse, err error) {
-	_, err = it.Client.httpPost("taobao.tbk.itemid.temporary.transform", map[string]string{"item_ids": ids}, &res)
+	_, err = it.Client.httpPost("taobao.tbk.itemid.transform", map[string]string{"item_ids": ids}, &res)
 	return
 }
