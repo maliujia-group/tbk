@@ -17,29 +17,29 @@ type UatmTbkItem struct {
 	SmallImages struct {
 		String []string `json:"string"`
 	} `json:"small_images"`
-	ReservePrice      string `json:"reserve_price"`
-	ZkFinalPrice      string `json:"zk_final_price"`
-	UserType          int    `json:"user_type"`
-	Provcity          string `json:"provcity"`
-	ItemURL           string `json:"item_url"`
-	ClickURL          string `json:"click_url"`
-	Nick              string `json:"nick"`
-	SellerID          int    `json:"seller_id"`
-	Volume            int    `json:"volume"`
-	TkRate            string `json:"tk_rate"`
-	ZkFinalPriceWap   string `json:"zk_final_price_wap"`
-	ShopTitle         string `json:"shop_title"`
-	EventStartTime    string `json:"event_start_time"`
-	EventEndTime      string `json:"event_end_time"`
-	Type              int    `json:"type"`
-	Status            int    `json:"status"`
-	Category          int    `json:"category"`
-	CouponClickURL    string `json:"coupon_click_url"`
-	CouponEndTime     string `json:"coupon_end_time"`
-	CouponInfo        string `json:"coupon_info"`
-	CouponStartTime   string `json:"coupon_start_time"`
-	CouponTotalCount  int    `json:"coupon_total_count"`
-	CouponRemainCount int    `json:"coupon_remain_count"`
+	ReservePrice      string      `json:"reserve_price"`
+	ZkFinalPrice      string      `json:"zk_final_price"`
+	UserType          int         `json:"user_type"`
+	Provcity          string      `json:"provcity"`
+	ItemURL           string      `json:"item_url"`
+	ClickURL          string      `json:"click_url"`
+	Nick              string      `json:"nick"`
+	SellerID          MixedItemID `json:"seller_id"`
+	Volume            int         `json:"volume"`
+	TkRate            string      `json:"tk_rate"`
+	ZkFinalPriceWap   string      `json:"zk_final_price_wap"`
+	ShopTitle         string      `json:"shop_title"`
+	EventStartTime    string      `json:"event_start_time"`
+	EventEndTime      string      `json:"event_end_time"`
+	Type              int         `json:"type"`
+	Status            int         `json:"status"`
+	Category          int         `json:"category"`
+	CouponClickURL    string      `json:"coupon_click_url"`
+	CouponEndTime     string      `json:"coupon_end_time"`
+	CouponInfo        string      `json:"coupon_info"`
+	CouponStartTime   string      `json:"coupon_start_time"`
+	CouponTotalCount  int         `json:"coupon_total_count"`
+	CouponRemainCount int         `json:"coupon_remain_count"`
 }
 
 type TbkUatmFavoritesItemGetResponse struct {

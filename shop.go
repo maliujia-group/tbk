@@ -11,12 +11,12 @@ func (t *Tbk) Shop() *shop {
 }
 
 type NTbkShopData struct {
-	UserID     int    `json:"user_id"`
-	ShopTitle  string `json:"shop_title"`
-	ShopType   string `json:"shop_type"`
-	SellerNick string `json:"seller_nick"`
-	PictURL    string `json:"pict_url"`
-	ShopURL    string `json:"shop_url"`
+	UserID     MixedItemID `json:"user_id"`
+	ShopTitle  string      `json:"shop_title"`
+	ShopType   string      `json:"shop_type"`
+	SellerNick string      `json:"seller_nick"`
+	PictURL    string      `json:"pict_url"`
+	ShopURL    string      `json:"shop_url"`
 }
 
 type TbkShopGetResponse struct {

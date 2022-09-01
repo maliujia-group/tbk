@@ -37,7 +37,7 @@ type NTbkItem struct {
 	UserType                   int         `json:"user_type"`
 	Provcity                   string      `json:"provcity"`
 	ItemURL                    string      `json:"item_url"`
-	SellerID                   int         `json:"seller_id"`
+	SellerID                   MixedItemID `json:"seller_id"`
 	Volume                     int         `json:"volume"`
 	Nick                       string      `json:"nick"`
 	CatLeafName                string      `json:"cat_leaf_name"`
