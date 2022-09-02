@@ -64,6 +64,11 @@ type NTbkItem struct {
 	JuOnlineEndTime            string      `json:"ju_online_end_time"`
 	JuPreShowStartTime         string      `json:"ju_pre_show_start_time"`
 	JuPreShowEndTime           string      `json:"ju_pre_show_end_time"`
+	SalePrice                  string      `json:"sale_price"`
+	KuadianPromotionInfo       string      `json:"kuadian_promotion_info"`
+	SuperiorBrand              string      `json:"superior_brand"`
+	HotFlag                    string      `json:"hot_flag"`
+	InputNumIid                string      `json:"input_num_iid"`
 }
 
 /**
