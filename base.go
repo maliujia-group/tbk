@@ -114,6 +114,15 @@ func (t *Tbk) ParseBody(body io.Reader, response interface{}) ([]byte, error) {
 
 }
 
+func (t *Tbk) Send(method string, data map[string]string, response interface{}, useJson bool) ([]byte, error) {
+	if useJson {
+		res, err := t.httpPostJson(method, data, response)
+	} else {
+		res, err := t.httpPost(method, data, response)
+	}
+	return res, err
+}
+
 func (t *Tbk) httpPost(method string, data map[string]string, response interface{}) ([]byte, error) {
 	sysParams := t.systemParams(method)
 	allParams := sysParams
