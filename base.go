@@ -194,22 +194,22 @@ func (t *Tbk) Struct2MapString(obj interface{}) map[string]string {
 
 // MixedItemID 兼容数字和字符串商品ID (实现json.Unmarshal方法)
 type MixedItemID struct {
-	string
+	Str string
 }
 
 func (m *MixedItemID) UnmarshalJSON(b []byte) error {
-	m.string = strings.Trim(string(b), "\"")
+	m.Str = strings.Trim(string(b), "\"")
 	return nil
 }
 
 func (m *MixedItemID) MarshalJSON() ([]byte, error) {
-	return []byte(fmt.Sprintf("\"%s\"", m.string)), nil
+	return []byte(fmt.Sprintf("\"%s\"", m.Str)), nil
 }
 
 func (m *MixedItemID) IsSet() bool {
-	return m.string == ""
+	return m.Str == ""
 }
 
 func (m *MixedItemID) String() string {
-	return m.string
+	return m.Str
 }
