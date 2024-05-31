@@ -121,6 +121,10 @@ func (t *Tbk) Send(method string, data map[string]string, response interface{}, 
 	return t.httpPost(method, data, response)
 }
 
+func (t *Tbk) NewSend(method string, data interface{}, response interface{}) ([]byte, error) {
+	return t.httpPostJson(method, data, response)
+}
+
 func (t *Tbk) httpPost(method string, data map[string]string, response interface{}) ([]byte, error) {
 	sysParams := t.systemParams(method)
 	allParams := sysParams
