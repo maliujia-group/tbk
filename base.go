@@ -116,13 +116,17 @@ func (t *Tbk) ParseBody(body io.Reader, response interface{}) ([]byte, error) {
 
 func (t *Tbk) Send(method string, data map[string]string, response interface{}, useJson bool) ([]byte, error) {
 	if useJson {
-		return t.httpPostJson(method, data, response)
+		session, ok := data["session"]
+		if !ok {
+			session = ""
+		}
+		return t.httpPostJson(method, session, data, response)
 	}
 	return t.httpPost(method, data, response)
 }
 
-func (t *Tbk) NewSend(method string, data interface{}, response interface{}) ([]byte, error) {
-	return t.httpPostJson(method, data, response)
+func (t *Tbk) NewSend(method string, session string, data interface{}, response interface{}) ([]byte, error) {
+	return t.httpPostJson(method, session, data, response)
 }
 
 func (t *Tbk) httpPost(method string, data map[string]string, response interface{}) ([]byte, error) {
@@ -144,8 +148,11 @@ func (t *Tbk) httpPost(method string, data map[string]string, response interface
 	return t.ParseBody(resp.Body, &response)
 }
 
-func (t *Tbk) httpPostJson(method string, data interface{}, response interface{}) ([]byte, error) {
+func (t *Tbk) httpPostJson(method string, session string, data interface{}, response interface{}) ([]byte, error) {
 	sysParams := t.systemParams(method)
+	if session != "" {
+		sysParams["session"] = session
+	}
 	sysParams["sign"] = t.generateSign(sysParams, t.Conf.SecretKey)
 	jsonStr, err := json.Marshal(data)
 	if err != nil {
