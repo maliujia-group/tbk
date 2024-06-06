@@ -30,6 +30,6 @@ func (s *spread) Get(urls ...string) (res *TbkSpreadGetResponse, err error) {
 	for i, url := range urls {
 		data[i] = struct{ Url string }{Url: url}
 	}
-	_, err = s.Client.httpPostJson("taobao.tbk.spread.get", &data, &res)
+	_, err = s.Client.httpPostJson("taobao.tbk.spread.get", "", &data, &res)
 	return
 }
